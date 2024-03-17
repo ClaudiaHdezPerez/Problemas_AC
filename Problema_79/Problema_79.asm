@@ -1,10 +1,10 @@
 %include "io.inc"
 
 section .data
-a dd 20
-b dd 3
-c dd 3
-d dd 14
+a dw 2
+b dw 6
+c dw 3
+d dw 15
 section .bss
 factor1 resb 4
 factor2 resb 4
