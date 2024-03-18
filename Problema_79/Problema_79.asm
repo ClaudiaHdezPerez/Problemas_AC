@@ -1,10 +1,10 @@
 %include "io.inc"
 
 section .data
-a dw 2
-b dw 6
-c dw 3
-d dw 15
+a dw 30
+b dw 100
+c dw 200
+d dw 141
 section .bss
 factor1 resb 4
 factor2 resb 4
@@ -30,10 +30,9 @@ CMAIN:
     mov eax, [numerador]
     mov ebx, [denominador]
     
-    PRINT_DEC 4, eax
+    PRINT_DEC 1, eax
     NEWLINE
-    NEWLINE
-    PRINT_DEC 4, ebx
+    PRINT_DEC 1, ebx
     NEWLINE
     xor eax, eax
     ret
@@ -67,7 +66,7 @@ Multiply:
     
     cmp eax, 0
     je zero
-   
+        
     m_while:
         sub ebx, 1     
         cmp ebx, 0 
@@ -131,39 +130,39 @@ MCM:
     
  ; Region donde se restan las fracciones
 Rest_Fractions:
-    mov eax, [b]
-    mov ebx, [d]
+    mov ax, [b]
+    mov bx, [d]
     
-    mov [mcm1], eax
-    mov [mcm2], ebx
+    mov [mcm1], ax
+    mov [mcm2], bx
     call MCM
     mov ebx, [MCM_result]
     mov [denominador], ebx
-    mov eax, [b]
+    mov ax, [b]
     mov [d1], ebx
-    mov [d2], eax
+    mov [d2], ax
     
     call Positive_Division
     mov ecx, [cociente]
     mov [numerador], ecx
     
-    mov eax, [a]
+    mov ax, [a]
     mov ebx, [numerador]
-    mov [factor1], eax
+    mov [factor1], ax
     mov [factor2], ebx
     
     call Multiply
     mov eax, [factor1]
     mov [numerador], eax
     
-    mov eax, [d]
+    mov ax, [d]
     mov ebx, [denominador]
     mov [d1], ebx
-    mov [d2], eax
+    mov [d2], ax
     call Positive_Division
     mov ecx, [cociente]
-    mov eax, [c]
-    mov [factor1], eax
+    mov ax, [c]
+    mov [factor1], ax
     mov [factor2], ecx
     
     call Multiply
