@@ -1,7 +1,7 @@
 %include "io.inc"
 
 section .data
-l dw 6
+l dw 100
 section .bss 
 count resb 4
 factor1 resb 4
