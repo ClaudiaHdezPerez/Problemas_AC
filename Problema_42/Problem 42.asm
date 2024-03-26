@@ -1,10 +1,10 @@
 %include "io.inc"
 
 section .data
-n dd 2
-m dd 4
-A_1 dw 1,  2,  3, 1, 2, 3, 1, 8
-A_2 dw 4, -2, -1, 8, 3, 3, 1, 15
+n dd 4
+m dd 3
+A_1 dw 1, 0, 3, 0, 4, 5, 2, 20, 2, 3, 10, 18
+A_2 dw 1, 0, 3, 0, 4, 5, 2, 20, 2, 3, 10, 18
 section .bss
 i resb 4
 result resb 4

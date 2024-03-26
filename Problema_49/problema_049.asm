@@ -1,8 +1,8 @@
 %include "io.inc"
 
 section .data
-n dw 11
-L dw 8, 5, 20, 4, 6, 3, 10, 2, 5, 4, 1
+n dw 7
+L dw 10, 15, 8, 21, 4, 1, 10
 
 ;respuesta >>> 1 2 3 4 4 20 10 8 5 5 6
 
@@ -67,7 +67,8 @@ HeapyFy:
     ; checking that is the minor child
     movzx eax, word [index]
     add eax, 1
-    cmp eax, [n]
+    movzx ebx, word [n]
+    cmp eax, ebx
     jl if_1
     jmp while
     if_1:
